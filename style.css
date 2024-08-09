@@ -25,10 +25,11 @@
     height: 48px;
     margin: 40px 0px 0px 40px; /*arriba derecha abajo izquierda*/
 }
-
-/*Section--------------------------------------------------------------------*/
 .caja-encriptador{
     width: 680px;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
 }
 .caja-encriptador-encriptado{
     width: 400px;
@@ -82,6 +83,17 @@
     background: linear-gradient(#3E5151,#DECBA4);
     flex-direction: end;
 }
-
-/*Section---------------------------------------------------------------------*/
-
+.botones-principales{
+    width: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.botones-principales-e{
+    width: 288px;
+    display: flex;
+}
+.botones-principales-d{
+    width: 288px
+    display: flex;
+}
