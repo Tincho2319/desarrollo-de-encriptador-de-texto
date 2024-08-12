@@ -10,28 +10,63 @@
     <header class="presentacion-logo">
       <img src="./assets/Logo.png" />
     </header>
-    <main>
-      <section class="caja-encriptador">
-        <h1 class="titulo-presentacion">
-          Encriptador de
-          <strong class="titulo-presentacion-strong">Texto</strong>
-        </h1>
+
+    <main class="contenedor-general">
+      <section class="caja-principal">
+        <div class="div-texto">
+          <textarea class="cuadro-texto" name="texto" id="texto-encriptado" placeholder="Escribe aquí tu texto para encriptar o desencriptar"
+          ></textarea>
+        </div>
+
         <div class="Botones-principales">
-          <a class="Botones-principales-e">Encriptar</a>
-          <a class="Botones-principales-d">Desencriptar</a>  
+          <button onclick="encriptarCodigo()" class="Botones-principales-e">
+            Encriptar
+          </button>
+          <button onclick="DencriptarCodigo()" class="Botones-principales-d">Desencriptar</button>
         </div>
-    </section>
-        <div class="caja-encriptador-encriptado">
-          <div class="caja-encriptador-texto">
-            <p class="encriptador-titulo">Ningun mensaje fue encontrado</p>
-            <p class="encriptador-texto">
-              Ingresa el texto que desees encripta o desencriptar.
-            </p>
-          </div>
-          <img
-            class="imagen-encriptador" src="./assets/Muñeco.png" alt="No se encontro ningun texto"/>
+      </section>
+
+      <section id="contenido2" class="caja-secundaria-encriptada">
+        <div class="caja-encriptador-texto-funcion">
+          <textarea disabled class="texto_funcion" name="cuadro-encriptado" id="encriptado/desencriptado"></textarea>
+          <button onclick="copiarAlPortapapeles()" id="copyy" class="boton-copiar">Copiar</button>
         </div>
+      </section>
+
+      <section id="contenido1" class="caja-secundaria">
+        <div class="caja-encriptador-texto">
+          <p class="encriptador-titulo">Ningun mensaje fue encontrado</p>
+          <p class="encriptador-texto">
+            Ingresa el texto que desees encripta o desencriptar.
+          </p>
+        </div>
+        <img
+          class="imagen-encriptador"
+          ;
+          src="./assets/Muñeco.png"
+          ;
+          alt="No se encontro ningun texto"
+        />
+      </section>
+
+
+
+      
     </main>
-    <footer></footer>
+
+
+
+    <footer class="footer_presentacion">
+      <p class="texto_minombre">Designed by</p>
+      <div class="mi_nombre_caja">
+        <a
+          class="caja__botones__estilos"
+          href="https://www.linkedin.com/in/martin-alcaraz-desbackendjunior/"
+        >
+          <img src="./assets/linkedin.png" />Martin Alcaraz</a
+        >
+      </div>
+    </footer>
+    <script src="app.js"></script>
   </body>
 </html>

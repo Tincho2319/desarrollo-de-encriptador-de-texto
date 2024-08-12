@@ -1,46 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root{
+    --texto-inter: "Inter" sans-serif;
+    --texto-mont: "Montserrat" sans-serif;
+}
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
+    }
 
-  body {
-    height: 100%; /* Asegura que el cuerpo ocupe al menos la altura completa de la ventana */
+body {
+    width: 100%; /* Asegura que el cuerpo ocupe al menos la altura completa de la ventana */
     background: linear-gradient(#9dacbb,#4CA1AF);
 }
-
-.titulo-presentacion{
-    font-family: "Exo", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 24px;
-    font-style: normal;
-    text-align: center;
-}
-
 .presentacion-logo{ /*Margen logo, no tocar*/
-    width: 120px;
-    height: 48px;
+    width: 7.5rem;
+    height: 3rem;
     margin: 40px 0px 0px 40px; /*arriba derecha abajo izquierda*/
 }
-.caja-encriptador{
-    width: 680px;
+.contenedor-general{
+    width: 100%;
     display: flex;
-    justify-items: center;
-    flex-direction: column;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 110px;
 }
-.caja-encriptador-encriptado{
-    width: 400px;
-    height: 944px;
+.caja-principal{
+    width: 42.5rem;
+    height: 46.75rem;
+    display: flex;
     box-sizing: border-box;
-    border-radius: 32px;
+    flex-direction: column;
+    gap: 24.375rem;
+    margin: 160px 0px 0px 0px;
+}
+.caja-secundaria{
+    width: 25rem;
+    height: 59rem;
+    border-radius: 2rem;
     background: linear-gradient(#ADA996,#F2F2F2,#DBDBDB,#EAEAEA);
     display: flex;
     flex-direction: column-reverse;
-    justify-content:end;
 }
+
+.div-texto{
+    display: flex;
+    box-sizing: border-box;
+    border-color: none;
+    
+}
+
+.cuadro-texto{
+    width: 42.5rem;
+    height: 18rem; 
+    display: flex;
+    box-sizing: border-box; 
+    background: none;
+    border: none;
+    resize: none;
+    font-family: var(--texto-inter);
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: left;
+    padding: 1rem 1rem;
+}
+.cuadro-texto::placeholder{
+    color: #134E5E;
+    opacity: 0.8;
+    font-family: var(--texto-inter);
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0.625rem 0.625rem;
+}
+
+.Botones-principales{
+    width: 42.5rem;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    
+}
+
+.Botones-principales-d,.Botones-principales-e{
+    width: 20.5rem;
+    height: 67px;
+    font-family: var(--texto-inter);
+    font-weight: 400;
+    border: #DECBA4;
+    font-size: 1.375rem;
+    border-radius: 1.375rem;
+    cursor: pointer;
+}
+
+.Botones-principales-d{
+    background: linear-gradient(#306574,#b0b9b2);
+}
+
+.Botones-principales-e{
+background: linear-gradient(#134E5E,#71B280);
+}
+
 .imagen-encriptador{
     width: 85%;
     display: flex;
@@ -50,50 +111,108 @@
 .encriptador-titulo{
     
     font-family: "Inter", sans-serif;
-    font-weight: 36px;
-    font-style: 600;
+    font-weight: 600;
+    font-size: 2rem;
     text-align: center;
     line-height: 120%;
 }
 .caja-encriptador-texto{
-    width: 336px;
+    width: 21rem;
     display: flex;
-    box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
-    margin: 0px 0px 220px 30px;
+    margin: 0px 0px 225px 35px;
     gap: 20px;
 }
-.encriptador-texto{
-    font-family: "Montserrat", sans-serif;
-    font-weight: 16px;
-    font-style: 600;
-    text-align: center;
-    
+
+.texto_minombre{
+ color: #EAEAEA;
 }
-.caja-encriptador-encriptado-copiar{
+
+.footer_presentacion{
+    text-align: center;
+    padding: 1rem;
+    background-color: #000000;
+    font-family: var(--texto-mont);
+    font-weight: 400;
+    font-size: 1.5rem;  
+}
+
+.footer_presentacion{
     display: flex;
-    width: 336px;
-    height: 67px;
-    border: solid #4CA1AF;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+}
+
+.caja__botones__estilos{
+    width: 230px; 
+    padding: 5px 0;
+    text-align: center;
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+    background-color: #0a0a0a;
+    border-radius: 10px;
+    font-family: var(--texto-mont);
+    font-weight: 400;
+    font-size: 1.5rem;
+    border: 2px solid var(--color-terciario);
+    display:flex;
+    justify-content: center;
+    gap: 10px; 
+   }
+
+   /*///////////////////////////////////////////////////////////*/
+
+.boton-copiar{
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0px 0px 32px 30px; /*arriba derecha abajo izquierda*/
-    border-radius: 24px;
-    background: linear-gradient(#3E5151,#DECBA4);
-    flex-direction: end;
+    background: linear-gradient(#4c8ea0,#5c9e6b);
+    font-size: 1.9rem;
+    border-radius: 1.375rem;
+    cursor: pointer;
+    width: 20.5rem;
+    height: 67px;
+    font-family: var(--texto-mont);
+    font-weight: 400;
+    border: #DECBA4;  
 }
-.botones-principales{
-    width: 680px;
+    
+.texto_funcion{
     display: flex;
+    width: 22.2rem;
+    height: 47rem; 
+    border: none;
+    padding: 0.5rem;
+    resize: none; 
+    border-radius: 0.4rem;
+/***************estilos*****************/
+    background: linear-gradient(#ADA996,#F2F2F2,#DBDBDB,#EAEAEA);
+    font-family: var(--texto-inter);
+    font-weight: 400;
+    font-size: 2rem;
+    text-align: left;
+    color: #050505;
+    margin-left: -1.125rem;
+}
+
+.caja-secundaria-encriptada{
+    box-sizing: border-box;
+    width: 25rem;
+    height: 59rem;
+    border-radius: 2rem;
+    background: linear-gradient(#413a1c,#F2F2F2,#DBDBDB,#c9b1b1);
+    display:flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
+    gap: 20px;
 }
-.botones-principales-e{
-    width: 288px;
+.caja-encriptador-texto-funcion{
+    width: 21rem;
     display: flex;
-}
-.botones-principales-d{
-    width: 288px
-    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
 }
