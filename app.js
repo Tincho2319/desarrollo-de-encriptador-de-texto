@@ -82,22 +82,22 @@ function encriptarCodigo() {
 
   function copiarAlPortapapeles() {
 
-    // Crea un campo de texto "oculto"
+    
     var aux = document.createElement("input");
   
-    // Asigna el contenido del elemento especificado al valor del campo
+
     aux.setAttribute("value", document.getElementById('encriptado/desencriptado').innerHTML);
   
-    // Añade el campo a la página
+    
     document.body.appendChild(aux);
   
-    // Selecciona el contenido del campo
+  
     aux.select();
   
-    // Copia el texto seleccionado
+    
     document.execCommand("copy");
 
-    // Elimina el campo de la página
+   
   document.body.removeChild(aux);
   
   }
@@ -105,10 +105,10 @@ function encriptarCodigo() {
   function DencriptarCodigo() {
     let texto = document.getElementById('texto-encriptado').value;
     
-    // Borrar el contenido anterior del área de texto de resultado
+    
     BorrarTexto();
     
-    // Mostrar contenido2 si contenido1 está oculto
+   
     if (document.getElementById('contenido1').style.display === 'flex') {
         document.getElementById('contenido1').style.display = 'none';
         document.getElementById('contenido2').style.display = 'flex';
@@ -134,7 +134,7 @@ function Desencriptar(texto) {
 
     let desencriptar_cod = texto;
 
-    // Reemplaza cada código por la vocal correspondiente
+  
     for (const [codigo, vocal] of Object.entries(mapeo)) {
         const regex = new RegExp(codigo, 'g');
         desencriptar_cod = desencriptar_cod.replace(regex, vocal);
