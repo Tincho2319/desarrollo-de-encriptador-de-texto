@@ -9,3 +9,4 @@
 <p>- Se personalizo los backgrounds de todos los elementos.</p>
 <p>- Mejore la estructura del codigo para que sea mas comprensible.</p>
 <p>- Por ultimo agrege un footer y lo personalice.</p>
+<p>Ultima modificacion: Se optimizo codigo de, javascript, html y css. Y se cambiaron los backgrounds de algunos elementos!</p>
