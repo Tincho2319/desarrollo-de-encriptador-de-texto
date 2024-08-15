@@ -91,7 +91,6 @@ function Encriptar_codigo(texto) {
   return encriptar_cod;
 }
 
-<<<<<<< HEAD
 function copiarAlPortapapeles() {
   var aux = document.createElement("input");
   aux.setAttribute(
@@ -101,28 +100,9 @@ function copiarAlPortapapeles() {
   document.body.appendChild(aux);
   aux.select();
   document.execCommand("copy");
-=======
-    
-    var aux = document.createElement("input");
-  
-
-    aux.setAttribute("value", document.getElementById('encriptado/desencriptado').innerHTML);
-  
-    
-    document.body.appendChild(aux);
-  
-  
-    aux.select();
-  
-    
-    document.execCommand("copy");
-
-   
->>>>>>> e5173e3847c4cbc7a63151c3e876c957bc2538f6
   document.body.removeChild(aux);
 }
 
-<<<<<<< HEAD
 function DencriptarCodigo() {
   Seteo();
   let texto = document.getElementById("texto-encriptado").value.trim();
@@ -135,26 +115,6 @@ function DencriptarCodigo() {
     let resultadodes = Desencriptar(texto);
     encripdesencrip.innerText = resultadodes;
   }
-=======
-  function DencriptarCodigo() {
-    let texto = document.getElementById('texto-encriptado').value;
-    
-    
-    BorrarTexto();
-    
-   
-    if (document.getElementById('contenido1').style.display === 'flex') {
-        document.getElementById('contenido1').style.display = 'none';
-        document.getElementById('contenido2').style.display = 'flex';
-    }
-    
-    if (texto.trim() === '') {
-        NohayMensaje();
-    } else {
-        let resultadodes = Desencriptar(texto);
-        document.getElementById('encriptado/desencriptado').innerText = resultadodes; // Ajusta el ID según tu HTML
-    }
->>>>>>> e5173e3847c4cbc7a63151c3e876c957bc2538f6
 }
 
 function Desencriptar(texto) {
@@ -168,18 +128,10 @@ function Desencriptar(texto) {
 
   let desencriptar_cod = texto;
 
-<<<<<<< HEAD
   for (const [codigo, vocal] of Object.entries(mapeo)) {
     const regex = new RegExp(codigo, "g");
     desencriptar_cod = desencriptar_cod.replace(regex, vocal);
   }
-=======
-  
-    for (const [codigo, vocal] of Object.entries(mapeo)) {
-        const regex = new RegExp(codigo, 'g');
-        desencriptar_cod = desencriptar_cod.replace(regex, vocal);
-    }
->>>>>>> e5173e3847c4cbc7a63151c3e876c957bc2538f6
 
   return desencriptar_cod;
 }
