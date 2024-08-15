@@ -1,149 +1,137 @@
-function alternarVista() {
-    const contenido1 = document.getElementById('contenido1');
-    const contenido2 = document.getElementById('contenido2');
+let imagen, textoparrafo, textotexto, copiarr, cajasecund, encripdesencrip;
+const imagenn = document.querySelector(".imagen-encriptador");
+window.addEventListener("load", verificarResolucion);
+window.addEventListener("resize", verificarResolucion);
 
-    
-    if (contenido2.style.display === 'none') {
-        contenido2.style.display = 'flex';
-        contenido1.style.display = 'none';
-    } 
-    
+function Seteo() {
+  imagen = document.getElementById("imagen");
+  textoparrafo = document.getElementById("texto-parrafo");
+  textotexto = document.getElementById("texto-texto");
+  copiarr = document.getElementById("copy2");
+  cajasecund = document.getElementById("cajasecund");
+  encripdesencrip = document.getElementById("encrip-desencrip");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  Seteo();
+  ocultarMensajeEncriptado();
+});
+
+function verificarResolucion() {
+  if (window.innerWidth <= 1200) {
+    imagenn.style.display = "none";
+  } else {
+    imagenn.style.display = "block";
+  }
+}
+
+function mostrarMensajeEncriptado() {
+  cajasecund.style.display = "flex";
+  encripdesencrip.style.display = "block";
+  copiarr.style.display = "block";
+
+  imagen.style.display = "none";
+  textoparrafo.style.display = "none";
+  textotexto.style.display = "none";
+}
+
+function ocultarMensajeEncriptado() {
+  cajasecund.style.display = "flex";
+  encripdesencrip.style.display = "none";
+  copiarr.style.display = "none";
+
+  imagen.style.display = "flex";
+  textoparrafo.style.display = "flex";
+  textotexto.style.display = "flex";
 }
 
 function BorrarTexto() {
-    let text = document.getElementById('texto-encriptado');
-
-    if(text =!''){
-        return document.querySelector('#texto-encriptado').value ='';   
-    }
+  document.getElementById("texto-encriptado").value = "";
 }
 
 function NohayMensaje() {
-    const contenido1 = document.getElementById('contenido1');
-    const contenido2 = document.getElementById('contenido2');
-     
-    if (contenido2.style.display === 'flex') {
-        contenido2.style.display = 'none';
-        contenido1.style.display = 'flex';
-    } 
+  ocultarMensajeEncriptado();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const contenido1 = document.getElementById('contenido1');
-    const contenido2 = document.getElementById('contenido2');
-
-    
-    contenido1.style.display = 'flex';
-    contenido2.style.display = 'none';
-});
-
 function encriptarCodigo() {
-    
-    let texto = document.getElementById('texto-encriptado').value;
-    BorrarTexto();
-   
-    if (texto.trim() === '') {
-        return NohayMensaje();
-    } else if (contenido1.style.display === 'flex'){
-        contenido1.style.display = 'none';
-        contenido2.style.display = 'flex';
-    }
-        let resultado = Encriptar_codigo(texto);
-        document.getElementById('encriptado/desencriptado').innerText = resultado;
-    
+  Seteo();
+  let texto = document.getElementById("texto-encriptado").value.trim();
+  BorrarTexto();
+
+  if (texto === "") {
+    NohayMensaje();
+  } else {
+    mostrarMensajeEncriptado();
+    let resultado = Encriptar_codigo(texto);
+    encripdesencrip.innerText = resultado;
   }
+}
 
-  function Encriptar_codigo(texto) {
-    let encriptar_cod = '';
+function Encriptar_codigo(texto) {
+  let encriptar_cod = "";
 
-    
+  for (let i = 0; i < texto.length; i++) {
+    let buffer = texto[i];
 
-    for (let i = 0; i < texto.length; i++) {
-      let buffer = texto[i];
-
-      if (buffer === 'a') {
-        buffer = 'ai';
-      } else if (buffer === 'e') {
-        buffer = 'enter';
-      } else if (buffer === 'i') {
-        buffer = 'imes';
-      } else if (buffer === 'o') {
-        buffer = 'ober';
-      } else if (buffer === 'u') {
-        buffer = 'ufat';
-      }
-
-      encriptar_cod += buffer;
+    if (buffer === "a") {
+      buffer = "ai";
+    } else if (buffer === "e") {
+      buffer = "enter";
+    } else if (buffer === "i") {
+      buffer = "imes";
+    } else if (buffer === "o") {
+      buffer = "ober";
+    } else if (buffer === "u") {
+      buffer = "ufat";
     }
 
-    return encriptar_cod;
-    
+    encriptar_cod += buffer;
   }
 
-  function copiarAlPortapapeles() {
+  return encriptar_cod;
+}
 
-    // Crea un campo de texto "oculto"
-    var aux = document.createElement("input");
-  
-    // Asigna el contenido del elemento especificado al valor del campo
-    aux.setAttribute("value", document.getElementById('encriptado/desencriptado').innerHTML);
-  
-    // Añade el campo a la página
-    document.body.appendChild(aux);
-  
-    // Selecciona el contenido del campo
-    aux.select();
-  
-    // Copia el texto seleccionado
-    document.execCommand("copy");
-
-    // Elimina el campo de la página
+function copiarAlPortapapeles() {
+  var aux = document.createElement("input");
+  aux.setAttribute(
+    "value",
+    document.getElementById("encrip-desencrip").innerHTML
+  );
+  document.body.appendChild(aux);
+  aux.select();
+  document.execCommand("copy");
   document.body.removeChild(aux);
-  
-  }
+}
 
-  function DencriptarCodigo() {
-    let texto = document.getElementById('texto-encriptado').value;
-    
-    // Borrar el contenido anterior del área de texto de resultado
-    BorrarTexto();
-    
-    // Mostrar contenido2 si contenido1 está oculto
-    if (document.getElementById('contenido1').style.display === 'flex') {
-        document.getElementById('contenido1').style.display = 'none';
-        document.getElementById('contenido2').style.display = 'flex';
-    }
-    
-    if (texto.trim() === '') {
-        NohayMensaje();
-    } else {
-        let resultadodes = Desencriptar(texto);
-        document.getElementById('encriptado/desencriptado').innerText = resultadodes; // Ajusta el ID según tu HTML
-    }
+function DencriptarCodigo() {
+  Seteo();
+  let texto = document.getElementById("texto-encriptado").value.trim();
+  BorrarTexto();
+
+  if (texto === "") {
+    NohayMensaje();
+  } else {
+    mostrarMensajeEncriptado();
+    let resultadodes = Desencriptar(texto);
+    encripdesencrip.innerText = resultadodes;
+  }
 }
 
 function Desencriptar(texto) {
-    // Mapeo de códigos a las vocales originales
-    const mapeo = {
-        'ai': 'a',
-        'enter': 'e',
-        'imes': 'i',
-        'ober': 'o',
-        'ufat': 'u'
-    };
+  const mapeo = {
+    ai: "a",
+    enter: "e",
+    imes: "i",
+    ober: "o",
+    ufat: "u",
+  };
 
-    let desencriptar_cod = texto;
+  let desencriptar_cod = texto;
 
-    // Reemplaza cada código por la vocal correspondiente
-    for (const [codigo, vocal] of Object.entries(mapeo)) {
-        const regex = new RegExp(codigo, 'g');
-        desencriptar_cod = desencriptar_cod.replace(regex, vocal);
-    }
+  for (const [codigo, vocal] of Object.entries(mapeo)) {
+    const regex = new RegExp(codigo, "g");
+    desencriptar_cod = desencriptar_cod.replace(regex, vocal);
+  }
 
-    return desencriptar_cod;
+  return desencriptar_cod;
 }
-
-
-
- 
-  
