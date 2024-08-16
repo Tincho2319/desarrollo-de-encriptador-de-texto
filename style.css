@@ -6,7 +6,7 @@
     --texto-mont: 'Montserrat', sans-serif;
     --color-texto-principal: #134E5E;
     --color-boton-1: linear-gradient(#000102, #8ccf9b);
-    --color-boton-2: linear-gradient(#121a1d, #dff0e3);
+    --color-boton-2: #429684;
     --color-fondo-1: linear-gradient(#ADA996, #F2F2F2, #DBDBDB, #EAEAEA);
     --color-fondo-2: linear-gradient(#a79857, #F2F2F2, #DBDBDB, #c9b1b1);
 }
@@ -45,6 +45,18 @@ body {
 }
 
 /*Textos, Parrafos, Estilos*/
+.subtitulo{
+    font-family: var(--texto-mont);
+    font-weight: 800;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content:left;
+    margin-bottom: -190px;
+    gap: 5px;
+}
+
 .texto_funcion,
 .cuadro-texto {
     font-family: var(--texto-inter);
@@ -76,6 +88,7 @@ body {
     padding: 1rem;
     margin-left: 4px;
     border-radius: 35px;
+    text-transform: lowercase;
 }
 
 .cuadro-texto::placeholder {
@@ -87,6 +100,7 @@ body {
     font-family: var(--texto-mont);
     font-weight: 300;
     font-size: 1rem;
+
 }
 
 .encriptador-titulo,
@@ -108,7 +122,7 @@ body {
     max-width: 688px;
     display: flex;
     flex-direction: column;
-    gap: 15rem;
+    gap: 13rem;
     margin-top: 5rem;
     border-radius: 32px;
 }
@@ -177,10 +191,6 @@ body {
     border: none;
 }
 
-.Botones-principales-d {
-    background: var(--color-boton-1);
-}
-
 .Botones-principales-e,
 .boton-copiar {
     background: var(--color-boton-2);
@@ -191,6 +201,22 @@ body {
     max-width: 20.5rem;
     height: 4.188rem;
     padding-bottom: 10px;
+}
+/*      Hovers        */
+.cuadro-texto:hover{
+    background-color: #9e8c8c;
+}
+.Botones-principales-d:hover{
+    background-color: #95eef5;   
+}
+.boton-copiar:hover{
+    background-color: #95eef5;
+}
+.Botones-principales-e:hover{
+    background-color: #95eef5;
+}
+.Botones-principales-d{
+    background: #ccebc2;  
 }
 
 /*      Footer       */
@@ -269,10 +295,6 @@ body {
         margin: 1rem 0 0 -1rem;
     }
 
-    .caja-secundaria-encriptada {
-        max-width: 22rem;
-    }
-
     .caja-encriptador-texto-funcion {
         width: 100%;
         max-width: 21rem;
@@ -304,9 +326,5 @@ body {
     .encriptador-titulo,
     .encriptador-texto {
         font-size: 1.5rem;
-    }
-
-    .imagen-encriptador {
-        display: none;
     }
 }
