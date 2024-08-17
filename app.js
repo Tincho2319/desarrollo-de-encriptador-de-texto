@@ -108,30 +108,30 @@ function DencriptarCodigo() {
   let texto = document.getElementById("texto-encriptado").value.trim();
   BorrarTexto();
 
-  if (texto === "") {
-    NohayMensaje();
-  } else {
+  if (texto) {
     mostrarMensajeEncriptado();
-    let resultadodes = Desencriptar(texto);
-    encripdesencrip.innerText = resultadodes;
+    encripdesencrip.innerText = DesencriptarCompletamente(texto);
+  } else {
+    NohayMensaje();
   }
 }
 
 function Desencriptar(texto) {
-  const mapeo = {
-    ai: "a",
-    enter: "e",
-    imes: "i",
-    ober: "o",
-    ufat: "u",
-  };
-
-  let desencriptar_cod = texto;
-
-  for (const [codigo, vocal] of Object.entries(mapeo)) {
-    const regex = new RegExp(codigo, "g");
-    desencriptar_cod = desencriptar_cod.replace(regex, vocal);
-  }
-
-  return desencriptar_cod;
+  return texto
+    .replace(/ai/g, "a")
+    .replace(/enter/g, "e")
+    .replace(/imes/g, "i")
+    .replace(/ober/g, "o")
+    .replace(/ufat/g, "u");
 }
+
+function DesencriptarCompletamente(texto) {
+  let desencriptado;
+  do {
+    desencriptado = texto;
+    texto = Desencriptar(texto);
+  } while (texto !== desencriptado);
+  return texto;
+}
+
+
