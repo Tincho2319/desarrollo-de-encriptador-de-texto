@@ -295,13 +295,14 @@ body {
         margin: 1rem 0 0 -1rem;
     }
 
-    .caja-encriptador-texto-funcion {
+    .caja-secundaria {
         width: 100%;
         max-width: 21rem;
         height: 30rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        line-height: 60px;
 
     }
 
